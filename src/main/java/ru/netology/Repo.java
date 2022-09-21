@@ -2,7 +2,7 @@ package ru.netology;
 
 public class Repo {
 
-    Product[] products = new Product[0];
+    static Product[] products = new Product[0];
 
     public void add(Product product) {
         Product[] tmp = new Product[products.length + 1];
@@ -15,7 +15,7 @@ public class Repo {
 
     }
 
-    public static void remove(int remove) {
+    public static Product[] remove(int remove) {
         Product[] tmp = new Product[products.length - 1];
         int index = 0;
         for (Product product : products) {
@@ -25,6 +25,7 @@ public class Repo {
         }
 
         products = tmp;
+        return tmp;
     }
 
     public Product[] findAll() {
